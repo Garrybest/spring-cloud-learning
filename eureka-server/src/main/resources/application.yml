@@ -1,13 +1,15 @@
 server:
   port: 8761
+
 eureka:
   instance:
     hostname: localhost
   client:
-    register-with-eureka: false #eureka本身也是一个client
-    fetch-registry: false
-    service-url:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
 spring:
   application:
-    name: eureka-server
+    name: eurka-server
