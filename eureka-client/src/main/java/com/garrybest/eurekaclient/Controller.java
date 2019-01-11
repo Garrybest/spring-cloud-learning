@@ -1,6 +1,7 @@
 package com.garrybest.eurekaclient;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +16,9 @@ public class Controller {
 
     @Autowired
     private DiscoveryClient discoveryClient;
+
+    @Value("${server.port}")
+    private String port;
 
     @GetMapping("/")
     public String home() {
@@ -61,6 +65,6 @@ public class Controller {
     @ResponseBody
     @GetMapping("/hello")
     public String hello() {
-        return "<html>Hello from DEMO-SERVICE</html>";
+        return "<html>Hello from DEMO-SERVICE: " + port + "</html>";
     }
 }
