@@ -1,4 +1,4 @@
-package com.garrybest.ribbon;
+package com.garrybest.feign;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class Controller {
 
     @Autowired
-    RibbonService ribbonService;
+    FeignService feignService;
 
     @GetMapping("/hi")
-    public String hi(@RequestParam String name) {
-        return ribbonService.ribbonService(name);
+    public String sayHi(@RequestParam(defaultValue = "fr", required = false) String name) {
+        return feignService.sayHi(name);
     }
 }

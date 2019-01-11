@@ -10,7 +10,7 @@ public class RibbonService {
     @Autowired
     RestTemplate restTemplate;
 
-    public String ribbonService() {
-        return restTemplate.getForObject("http://DEMO-SERVICE/hello", String.class);
+    public String ribbonService(String name) {
+        return restTemplate.getForObject("http://DEMO-SERVICE/hello?name=" + name, String.class);
     }
 }

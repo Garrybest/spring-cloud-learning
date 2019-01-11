@@ -63,8 +63,8 @@ public class Controller {
     // A REST method, To call from another service.
     // See in Lesson "Load Balancing with Ribbon".
     @ResponseBody
-    @GetMapping("/hello")
-    public String hello() {
-        return "<html>Hello from DEMO-SERVICE: " + port + "</html>";
+    @GetMapping("/hi")
+    public String hello(@RequestParam String name) {
+        return "<html>Hi " + name + ", I am from DEMO-SERVICE: " + port + "</html>";
     }
 }
