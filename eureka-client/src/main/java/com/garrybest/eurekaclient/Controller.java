@@ -25,7 +25,6 @@ public class Controller {
         return "<a href='showAllServiceIds'>Show All Service Ids</a>";
     }
 
-    @ResponseBody
     @GetMapping("/showAllServiceIds")
     public String showAllServiceIds() {
         List<String> serviceIds = this.discoveryClient.getServices();
@@ -40,7 +39,6 @@ public class Controller {
         return html.toString();
     }
 
-    @ResponseBody
     @GetMapping("/showService")
     public String showFirstService(@RequestParam(defaultValue = "") String serviceId) {
         // (Need!!) eureka.client.fetchRegistry=true
@@ -62,7 +60,6 @@ public class Controller {
 
     // A REST method, To call from another service.
     // See in Lesson "Load Balancing with Ribbon".
-    @ResponseBody
     @GetMapping("/hi")
     public String hello(@RequestParam String name) {
         return "<html>Hi " + name + ", I am from DEMO-SERVICE: " + port + "</html>";
