@@ -18,6 +18,10 @@
 
     <modules>
         <module>eureka-server</module>
+        <module>eureka-client</module>
+        <module>ribbon</module>
+        <module>feign</module>
+        <module>zuul</module>
     </modules>
 
     <properties>

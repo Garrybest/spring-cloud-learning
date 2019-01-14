@@ -9,9 +9,9 @@ spring:
     name: service-feign
 feign:
   hystrix:
-    enabled: true # ´ò¿ªfeignµÄhystrix¶ÏÂ·Æ÷¹¦ÄÜ
+    enabled: true # æ‰“å¼€feignçš„hystrixæ–­è·¯å™¨åŠŸèƒ½
 management:
   endpoints:
     web:
       exposure:
-        include: hystrix.stream # ÓÉÓÚ endpoints ÖĞ»á°üº¬ºÜ¶àÃô¸ĞĞÅÏ¢£¬³ıÁË health ºÍ info Á½¸öÖ§³Ö web ·ÃÎÊÍâ£¬ÆäËûµÄÄ¬ÈÏ²»Ö§³Ö web ·ÃÎÊ¡£
+        include: hystrix.stream # ç”±äº endpoints ä¸­ä¼šåŒ…å«å¾ˆå¤šæ•æ„Ÿä¿¡æ¯ï¼Œé™¤äº† health å’Œ info ä¸¤ä¸ªæ”¯æŒ web è®¿é—®å¤–ï¼Œå…¶ä»–çš„é»˜è®¤ä¸æ”¯æŒ web è®¿é—®ã€‚
